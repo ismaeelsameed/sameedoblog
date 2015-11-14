@@ -5,23 +5,16 @@
     <title>my website</title>
 </head>
 <body>
-<strong>Amane & Razan web site</strong><br>
-our first website
-<a href="http://www.google.com">click here</a>
-<br>parts:
-<ul>
-    <li>
-        one
-    </li>
-    <li>
-        two
-    </li>
-    <li>
-        three
-    </li>
-    <li>
-        four
-    </li>
-</ul>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
